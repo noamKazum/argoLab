@@ -1,0 +1,9 @@
+ReplicaNumber: 3
+
+containers:
+  containerPort: 8081
+  image: 'quay.io/noam_kazum/hello:v3'
+  tag: 'base'
+
+service:
+  servicePort: 8081
