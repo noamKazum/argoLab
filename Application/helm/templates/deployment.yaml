@@ -30,7 +30,7 @@ spec:
           imagePullPolicy: IfNotPresent
           volumeMounts:
             - name: index-html
-            mountPath: /tmp/html
+              mountPath: /tmp/html
 # Update with the image you build in part 1
           image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
       restartPolicy: Always
