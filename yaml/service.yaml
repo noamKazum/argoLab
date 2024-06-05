@@ -10,4 +10,4 @@ spec:
       targetPort: 8080
   selector:
 # set your user name
-    app: <userName>-hello-world
+    app: user10-hello-world
