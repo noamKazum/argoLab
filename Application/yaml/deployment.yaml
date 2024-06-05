@@ -20,11 +20,11 @@ spec:
           terminationMessagePath: /dev/termination-log
           name: hello-world
           ports:
-            - containerPort: 8080
+            - containerPort: 8081
               protocol: TCP
           imagePullPolicy: IfNotPresent
 # Update with the image you build in part 1
-          image: 'quay.io/noam_kazum/<imageName>:<Tag>'
+          image: 'quay.io/noam_kazum/hello:v1'
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
