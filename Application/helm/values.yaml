@@ -4,7 +4,7 @@ probes:
   readiness:
     httpGet:
       path: /health/readiness
-      port: {{ .Values.containers.containerPort }}
+      port: 8081
       scheme: HTTP
     initialDelaySeconds: 1
     timeoutSeconds: 1 # the time for timeout
@@ -14,7 +14,7 @@ probes:
   liveness:
     httpGet:
       path: /health/liveliness
-      port: {{ .Values.containers.containerPort }}
+      port: 8081
       scheme: HTTP
     initialDelaySeconds: 1
     timeoutSeconds: 1
