@@ -9,6 +9,7 @@ deploy1:
   argocd:
     syncwave:
       deployment: 5
+      configmap: 1
 
   service:
       servicePort: 8081
@@ -24,6 +25,7 @@ deploy2:
   argocd:
     syncwave:
       deployment: 10
+      configmap: 1
 
   service:
     servicePort: 8081
