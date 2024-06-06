@@ -30,8 +30,8 @@ spec:
           imagePullPolicy: IfNotPresent
           readinessProbe:
             httpGet:
-              path: /health/liveliness
-              port: {{ .Values.probes.readiness.path }}
+              path: {{ .Values.probes.readiness.path }}
+              port: {{ .Values.containers.containerPort }}
               scheme: HTTP
             initialDelaySeconds: 1
             timeoutSeconds: 1
