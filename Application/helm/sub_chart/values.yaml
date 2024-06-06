@@ -23,7 +23,7 @@ deploy2:
 
   argocd:
     syncwave:
-      deployment: 5
+      deployment: 10
 
   service:
     servicePort: 8081
