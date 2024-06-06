@@ -31,7 +31,7 @@ spec:
           readinessProbe:
             {{- tpl (toYaml .Values.Probes.readiness) . | nindent 12 }}
           livenessProbe:
-            {{- tpl (toYaml .Values.Probes.liveness) . | nindent 12 }}      
+            {{- tpl (toYaml .Values.Probes.liveness) . | nindent 12 }}
           env:
             - name: PORT
               value: {{ .Values.containers.containerPort | quote }}
