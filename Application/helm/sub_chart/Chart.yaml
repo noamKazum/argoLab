@@ -11,5 +11,5 @@ dependencies:
     repository: oci://ghcr.io/noamkazum/helm
     version: 1.0.1
     alias: deploy2
-version: 1.0.0
-appVersion: "1.0.0"
+version: 1.0.1
+appVersion: "1.0.1"

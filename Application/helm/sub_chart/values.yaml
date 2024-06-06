@@ -6,6 +6,10 @@ deploy1:
       image: 'quay.io/argo-helm-workshop/workshop-app'
       tag: 'chart_v2'
 
+  argocd:
+    syncwave:
+      deployment: 5
+
   service:
       servicePort: 8081
 
@@ -16,6 +20,10 @@ deploy2:
     containerPort: 8081
     image: 'quay.io/argo-helm-workshop/workshop-app'
     tag: 'chart_v2'
+
+  argocd:
+    syncwave:
+      deployment: 5
 
   service:
     servicePort: 8081

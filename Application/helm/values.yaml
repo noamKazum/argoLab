@@ -4,6 +4,10 @@ volume:
   mount:
     path: /tmp/html
 
+argocd:
+  syncwave:
+     deployment: 5
+
 probes:
   readiness:
     httpGet:
