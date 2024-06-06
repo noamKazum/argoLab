@@ -29,17 +29,9 @@ spec:
               protocol: TCP
           imagePullPolicy: IfNotPresent
           readinessProbe:
-            httpGet:
-              path: {{ .Values.probes.readiness.path }}
-              port: {{ .Values.containers.containerPort }}
-              scheme: HTTP
-            initialDelaySeconds: 1
-            timeoutSeconds: 1
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 3
+            {{- tpl (toYaml .Values.probes.readiness) . | nindent 12 }}
           livenessProbe:
-            {{- tpl (toYaml .Values.Probes.liveness) . | nindent 12 }}
+            {{- tpl (toYaml .Values.probes.liveness) . | nindent 12 }}
           env:
             - name: PORT
               value: {{ .Values.containers.containerPort | quote }}
