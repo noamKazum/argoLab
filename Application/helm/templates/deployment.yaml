@@ -31,7 +31,7 @@ spec:
           readinessProbe:
             httpGet:
               path: /health/liveliness
-              port: {{ .Values.containers.containerPort }}
+              port: {{ .Values.probes.readiness.path }}
               scheme: HTTP
             initialDelaySeconds: 1
             timeoutSeconds: 1
