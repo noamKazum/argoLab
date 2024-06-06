@@ -1,3 +1,7 @@
+deploy: 
+  service:
+    servicePort: 8081
+
 deploy1: 
   ReplicaNumber: 1
 
