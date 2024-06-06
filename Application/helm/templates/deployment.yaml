@@ -37,7 +37,7 @@ spec:
               value: {{ .Values.containers.containerPort | quote }}
           volumeMounts:
             - name: index-html
-              mountPath: /tmp/html
+              mountPath: {{ .Values.volume.mount.path }}
 # Update with the image you build in part 1
           image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
       restartPolicy: Always

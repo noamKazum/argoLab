@@ -1,5 +1,9 @@
 ReplicaNumber: 3
 
+volume:
+  mount:
+    path: /tmp/html
+
 probes:
   readiness:
     httpGet:
