@@ -29,9 +29,25 @@ spec:
               protocol: TCP
           imagePullPolicy: IfNotPresent
           readinessProbe:
-            {{- tpl (toYaml .Values.Probes.readiness) . | nindent 12 }}
+            httpGet:
+              path: /health/liveliness
+              port: {{ .Values.containers.containerPort }}
+              scheme: HTTP
+            initialDelaySeconds: 1
+            timeoutSeconds: 1
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 3
           livenessProbe:
-            {{- tpl (toYaml .Values.Probes.liveness) . | nindent 12 }}
+            httpGet:
+              path: /health/liveliness
+              port: {{ .Values.containers.containerPort }}
+              scheme: HTTP
+            initialDelaySeconds: 1
+            timeoutSeconds: 1
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 3
           env:
             - name: PORT
               value: {{ .Values.containers.containerPort | quote }}
