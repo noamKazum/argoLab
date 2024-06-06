@@ -1,5 +1,21 @@
 ReplicaNumber: 3
 
+probes:
+  readiness:
+    path: /health/readiness
+    initialDelaySeconds: 1
+    timeoutSeconds: 1 # the time for timeout
+    periodSeconds: 10 # the abount of time to wait between checks
+    successThreshold: 1 # count to decalre seccessfull 
+    failureThreshold: 3 # count to decalre failure
+  liveness:
+    path: /health/liveliness
+    initialDelaySeconds: 1
+    timeoutSeconds: 1
+    periodSeconds: 10
+    successThreshold: 1
+    failureThreshold: 3
+
 containers:
   containerPort: 8081
   image: 'quay.io/noam_kazum/hello'
